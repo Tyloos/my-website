@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi&Eco</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER THỨ HAI -->
+<div class="floating-header hidden" id="floatingHeader">
+  <div class="header-top">
+    <div class="logo"><img src="logo.png" alt="Logo" /></div>
+    <div class="search-box">
+      <form class="search-form">
+        <input type="text" placeholder="Từ khóa tìm kiếm..." />
+        <button type="submit">TÌM KIẾM</button>
+      </form>
+    </div>
+    <div class="hotline"><img src="hotline.gif" alt="Hotline" /></div>
+  </div>
+  <nav class="navbar">
+    <ul class="menu">
+      <li><a href="#section1">TRANG CHỦ</a></li>
+      <li><a href="gioithieu.html">VỀ CHÚNG TÔI</a></li>
+      <li><a href="#">SẢN PHẨM</a></li>
+      <li><a href="#">CHỨNG CHỈ</a></li>
+      <li><a href="#">TIN TỨC</a></li>
+      <li><a href="#">LIÊN HỆ</a></li>
+    </ul>
+  </nav>
+</div>
+
+  <!-- ==== DOT NAVIGATION ==== -->
+  <div class="dot-nav">
+    <span class="dot active" data-target="section1"></span>
+    <span class="dot" data-target="section2"></span>
+  </div>
+
+  <!-- ==== SNAP CONTAINER ==== -->
+  <div class="snap-container">
+
+    <!-- ==== SECTION 1 ==== -->
+    <section class="section-1 snap-section" id="section1">
+      <div class="section-1-wrapper">
+
+        <!-- HEADER -->
+        <div class="header-full" id="header">
+          <div class="header-top">
+            <div class="logo"><img src="logo.png" alt="Logo" /></div>
+            <div class="search-box">
+              <form class="search-form">
+                <input type="text" placeholder="Từ khóa tìm kiếm..." />
+                <button type="submit">TÌM KIẾM</button>
+              </form>
+            </div>
+            <div class="hotline"><img src="hotline.gif" alt="Hotline" /></div>
+          </div>
+          <nav class="navbar">
+            <ul class="menu">
+              <li><a href="#section1">TRANG CHỦ</a></li>
+              <li><a href="gioithieu.html">VỀ CHÚNG TÔI</a></li>
+              <li><a href="#">SẢN PHẨM</a></li>
+              <li><a href="#">CHỨNG CHỈ</a></li>
+              <li><a href="#">TIN TỨC</a></li>
+              <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+          </nav>
+        </div>
+
+<!-- SLIDER -->
+<div class="slider-outer-wrapper">
+  <div class="slider-wrapper" id="slider-wrapper">
+    <img src="img1.png" alt="Ảnh 1">
+    <img src="img2.png" alt="Ảnh 2">
+    <img src="img3.png" alt="Ảnh 3">
+  </div>
+  <div class="slider-dots" id="slider-dots"></div>
+</div>
+
+        <!-- FEATURES CAROUSEL -->
+        <div class="features-carousel">
+          <div class="feature-item"><img src="icon1.png" alt=""><span>100% sản phẩm tự nhiên</span></div>
+          <div class="feature-item"><img src="icon2.png" alt=""><span>Không cần màng nhựa</span></div>
+          <div class="feature-item"><img src="icon3.png" alt=""><span>Phân hủy sinh học 45 ngày</span></div>
+          <div class="feature-item"><img src="icon4.png" alt=""><span>An toàn lò vi sóng</span></div>
+          <div class="feature-item"><img src="icon5.png" alt=""><span>Chịu được nóng & lạnh</span></div>
+        </div>
+
+      </div>
+    </section>
+
+<!-- ==== SECTION 2: GIỚI THIỆU ==== -->
+<section class="snap-section about-section" id="section2">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>Đôi nét về <span class="highlight">Mi&Eco</span></h2>
+      <p>Với mong muốn đồng hành cùng doanh nghiệp thay đổi thói quen sử dụng nhựa dùng một lần, Mi&Eco mang đến giải pháp xanh với sản phẩm bã mía thân thiện với môi trường, an toàn cho sức khỏe.</p>
+      <p>Sản phẩm không chứa chất độc hại, dễ phân hủy sinh học, phù hợp dùng lò vi sóng và tủ lạnh — giúp giảm rác thải khó phân huỷ và bảo vệ hệ sinh thái.</p>
+      <a href="gioithieu.html" class="btn-learn-more">Xem thêm →</a>
+    </div>
+    <div class="about-image">
+      <img src="gioithieu2.png" alt="Sản phẩm Mi&Eco">
+    </div>
+  </div>
+</section>
+
+  
+  </div>
+
+<script>
+  const sliderWrapper = document.getElementById('slider-wrapper');
+  const images = sliderWrapper.querySelectorAll('img');
+  const sliderDots = document.getElementById('slider-dots');
+  let current = 0, interval;
+
+  // Tạo dot cho mỗi ảnh
+  images.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      current = i;
+      updateSlider();
+      resetAuto();
+    });
+    sliderDots.appendChild(dot);
+  });
+  const dots = sliderDots.querySelectorAll('.dot');
+
+  // Cập nhật slider
+  function updateSlider() {
+    sliderWrapper.style.transform = `translateX(-${current * 100}vw)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function nextSlide() {
+    current = (current + 1) % images.length;
+    updateSlider();
+  }
+
+  function startAuto() {
+    interval = setInterval(nextSlide, 7000);
+  }
+
+  function resetAuto() {
+    clearInterval(interval);
+    startAuto();
+  }
+
+  window.addEventListener('load', () => {
+    updateSlider();
+    startAuto();
+  });
+
+  // Ngăn kéo ảnh
+  images.forEach(img => img.addEventListener('dragstart', e => e.preventDefault()));
+
+  // Kéo chuột ngang
+  let isDragging = false, startX = 0;
+  sliderWrapper.addEventListener('mousedown', e => {
+    isDragging = true;
+    startX = e.pageX;
+    sliderWrapper.style.cursor = 'grabbing';
+  });
+
+  sliderWrapper.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const diff = e.pageX - startX;
+    if (Math.abs(diff) > 50) {
+      current = diff > 0
+        ? (current - 1 + images.length) % images.length
+        : (current + 1) % images.length;
+      updateSlider();
+      resetAuto();
+      isDragging = false;
+    }
+  });
+
+  ['mouseup', 'mouseleave'].forEach(evt =>
+    sliderWrapper.addEventListener(evt, () => {
+      isDragging = false;
+      sliderWrapper.style.cursor = 'grab';
+    })
+  );
+
+  // Dot nav và floating header
+  const snapContainer = document.querySelector('.snap-container');
+  const sections = document.querySelectorAll('.snap-section');
+  const navDots = document.querySelectorAll('.dot-nav .dot');
+  const floatingHeader = document.getElementById('floatingHeader');
+
+  navDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      sections[i].scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  snapContainer.addEventListener('scroll', () => {
+    let active = 0;
+    sections.forEach((sec, i) => {
+      if (sec.getBoundingClientRect().top <= window.innerHeight / 2) active = i;
+    });
+    navDots.forEach((d, i) => d.classList.toggle('active', i === active));
+    floatingHeader.classList.toggle('show', active !== 0);
+    floatingHeader.classList.toggle('hidden', active === 0);
+  });
+
+  // Cuộn mượt bằng chuột
+  let isScrolling = false;
+  snapContainer.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    if (isScrolling) return;
+    isScrolling = true;
+    const dir = e.deltaY > 0 ? 1 : -1;
+    const idx = Array.from(sections).findIndex(sec =>
+      sec.getBoundingClientRect().top >= -1 && sec.getBoundingClientRect().top < window.innerHeight
+    );
+    const target = Math.max(0, Math.min(sections.length - 1, idx + dir));
+    sections[target].scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => isScrolling = false, 800);
+  }, { passive: false });
+
+  // Click menu scroll mượt
+  document.querySelectorAll('.menu a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+
+
+
+
+</body>
+</html>

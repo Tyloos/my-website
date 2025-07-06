@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu về Mi&Eco</title>
+  <link rel="stylesheet" href="gioithieu.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header-full">
+    <div class="header-top">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="Logo"></a>
+      </div>
+      <div class="search-box">
+        <form class="search-form">
+          <input type="text" placeholder="Từ khóa tìm kiếm...">
+          <button type="submit">TÌM KIẾM</button>
+        </form>
+      </div>
+      <div class="hotline">
+        <img src="hotline.gif" alt="Hotline">
+      </div>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        <li><a href="index.html">TRANG CHỦ</a></li>
+        <li><a href="gioithieu.html" class="active">VỀ CHÚNG TÔI</a></li>
+        <li><a href="#">SẢN PHẨM</a></li>
+        <li><a href="#">CHỨNG CHỈ</a></li>
+        <li><a href="#">TIN TỨC</a></li>
+        <li><a href="#">LIÊN HỆ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="index.html">Trang chủ</a>
+    <span> / </span>
+    <span class="current">Giới thiệu về Mi&Eco</span>
+  </div>
+
+  <!-- Giới thiệu -->
+  <section class="intro-section">
+    <!-- PHẦN TRÊN: KHỐI GIỚI THIỆU -->
+    <div class="intro-header-wrapper">
+      <div class="intro-header fade-up">
+        <h2>Giới thiệu về <span class="highlight-red">Mi&Eco</span></h2>
+        <p>
+          Được thành lập từ năm 2017, với hành trình hơn 9 năm trên thị trường, <span class="highlight-red">Mi&Eco</span> hiện là nhà phân phối CHÍNH THỨC dòng sản phẩm bao bì bã mía phân hủy sinh học thương hiệu Gracz (Thái Lan) tại thị trường Việt Nam và là đối tác của rất nhiều thương hiệu lớn từ các siêu thị, chuỗi cửa hàng ăn uống, nhà hàng – khách sạn, hệ thống resort, food-court nổi tiếng tại Việt Nam.
+        </p>
+      </div>
+    </div>
+
+    <!-- PHẦN DƯỚI: ẢNH + MÔ TẢ -->
+    <div class="intro-body">
+      <div class="intro-image slide-left">
+        <img src="gioithieu2.png" alt="Sản phẩm bã mía">
+      </div>
+      <div class="intro-text slide-right">
+        <p>Với mong muốn thay đổi thói quen sử dụng bao bì nhựa độc hại, gây ảnh hưởng đến sức khỏe và môi trường tại Việt Nam.</p>
+        <p><span class="highlight-red">Mi&Eco</span> nỗ lực mang đến giải pháp bao bì xanh từ bã mía, đảm bảo không chứa chất gây hại cho sức khỏe, bảo vệ môi trường, giảm thiểu lượng rác thải không phân huỷ.</p>
+         <!-- ✚ Chèn hình bổ sung dưới text -->
+    <div class="extra-img intro-image">
+      <img src="test.png" alt="Hình phụ">
+    </div>
+      </div>
+    </div>
+  </section>
+  <section class="vision-mission-section">
+  <div class="vision-box slide-left-observe">
+    <h3>Tầm nhìn</h3>
+    <p>
+      Trở thành nhà cung cấp hàng đầu trong nước cho các dòng sản phẩm bao bì thân thiện với môi trường.
+      Giúp người tiêu dùng Việt Nam thay đổi thói quen sử dụng đồ nhựa độc hại và nâng cao nhận thức bảo vệ môi trường.
+    </p>
+  </div>
+  <div class="mission-box slide-right-observe">
+    <h3>Sứ mệnh</h3>
+    <p>
+      Chung tay cùng cộng đồng và xã hội trong việc giảm thiểu ô nhiễm trắng.
+    </p>
+    <img src="test.png" alt="Cây" />
+  </div>
+</section>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    fadeElements.forEach(el => observer.observe(el));
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const animatedElements = document.querySelectorAll('.fade-up, .slide-left, .slide-right');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+  });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll('.slide-left-observe, .slide-right-observe');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
+});
+
+
+</script>
+
+</body>
+</html>
