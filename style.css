@@ -163,28 +163,16 @@ a {
 }
 
 /* FEATURES CAROUSEL */
-.features-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 60px;
-  padding: 0px 40px;
-  background: url('banner.jpg') center/cover no-repeat;
-}
-/* .feature-item {
-  text-align: center;
-  max-width: 140px;
-} */
-/* .feature-item img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #fff;
-  border: 3px solid #1b7841;
-  padding: 10px;
-} */
+  .features-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 0px 40px;
+    background: url('banner.jpg') center/cover no-repeat;
+  }
 
-.feature-item img {
+ .feature-item img {
   width: 60px;
   height: 60px;
   object-fit: contain;
@@ -193,26 +181,27 @@ a {
   border-radius: 50%;
   background: #fff;
   border: 3px solid #1b7841;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
 }
-/* .feature-item span {
-  color: #145c32;
-  font-weight: 600;
-  display: block;
-  margin-top: 8px;
-} */
-.feature-item {
-  text-align: center;
-  width: 160px; /* tăng từ 140px */
-  min-height: 140px;
+
+.feature-item img:hover {
+  transform: rotateY(180deg); /* ✅ Lật ngang */
 }
-.feature-item span {
-  display: block;
-  margin-top: 8px;
-  font-weight: 600;
-  color: #145c32;
-  line-height: 1.4;
-  font-size: 15px;
-}
+
+  .feature-item {
+    text-align: center;
+    width: 160px; /* tăng từ 140px */
+    min-height: 140px;
+  }
+  .feature-item span {
+    display: block;
+    margin-top: 8px;
+    font-weight: 600;
+    color: #145c32;
+    line-height: 1.4;
+    font-size: 15px;
+  }
 
 /* SECTION 2 (Giới thiệu) */
 .about-section {
@@ -237,27 +226,34 @@ a {
   max-width: 600px;
 }
 .about-text h2 {
-  font-size: 36px;
-  color: #1b7841;
+  font-family: 'Lobster', sans-serif;
+  font-size: 45px;
+  color: #e3b800;
   margin-bottom: 20px;
 }
 .about-text p {
-  font-size: 16px;
+  font-family: 'Muli', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
   line-height: 1.8;
   color: #333;
   margin-bottom: 16px;
+  text-align: justify;
 }
 .highlight {
-  color: #e3b800;
+  color: #1b7841;
+  font-size: 60px;
 }
 .btn-learn-more {
+  font-family: 'Lobster', sans-serif;
   display: inline-block;
   background: #e3b800;
   color: #1b7841;
   padding: 10px 22px;
   border-radius: 4px;
-  font-weight: bold;
+  /* font-weight: bold; */
   transition: background 0.3s;
+  font-size: 16xp;
 }
 .btn-learn-more:hover {
   background: #c99f00;
@@ -351,13 +347,13 @@ a {
 }
 .footer-left h3, .footer-right h3, .footer-embed h3 {
   margin-bottom: 25px;
-  font-size: 25px;
+  font-size: 35px;
   font-weight: bold;
 }
 .footer-left p, .footer-right p {
-  margin-bottom: 6px;
+  margin-bottom: 16px;
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 20px;
 
 }
 .social-icons {
@@ -365,11 +361,20 @@ a {
   display: flex;
   gap: 10px;
 }
+
 .social-icons img {
-  height: 28px;
-  width: 28px;
-  object-fit: contain;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;        /* Giữ đúng tỷ lệ ảnh */
+  border-radius: 50%;       /* Bo tròn hoàn toàn */
+  transition: transform 0.3s ease;
 }
+
+.social-icons img:hover {
+  transform: scale(1.1);    /* Zoom nhẹ khi hover */
+}
+
+
 .footer-bottom {
   text-align: center;
   margin-top: auto;
@@ -387,7 +392,7 @@ a {
 .footer-right h3 {
   position: relative;
   padding-bottom: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .footer-left h3::after,
