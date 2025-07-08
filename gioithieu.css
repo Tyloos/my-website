@@ -108,7 +108,7 @@ a {
 .intro-header {
   max-width: 700px;
   margin: 0 auto;
-  padding: 35px 30px;
+  padding: 15px 30px;
   text-align: center;
 }
 .intro-header h2 {
@@ -162,7 +162,10 @@ a {
 .highlight {
   font-size: 65px;
 }
-
+.intro-header .highlight-red {
+  color: #1b7841;
+  font-weight: bold;
+}
 @media (max-width: 900px) {
   .intro-body {
     flex-direction: column;
