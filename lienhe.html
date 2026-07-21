@@ -1,234 +1,83 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liên hệ - Mi&Eco</title>
-  <link rel="stylesheet" href="lienhe.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/lobster-2" rel="stylesheet">
-  <link rel="icon" href="logotab.png" type="image/png">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Liên hệ - Mi&amp;Eco</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&amp;family=Mulish:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/contact.css" rel="stylesheet"/>
+<link href="assets/css/shared.css" rel="stylesheet"/>
+<link href="assets/images/brand/favicon.png" rel="icon" type="image/png"/>
 </head>
 <body>
-
 <!-- HEADER GIỐNG index.html -->
-<div class="header-full">
-  <div class="header-top">
-    <div class="logo"><img src="logo.png" alt="Logo" /></div>
-    <div class="search-box">
-      <form class="search-form">
-        <input type="text" placeholder="Từ khóa tìm kiếm..." />
-        <button type="submit">TÌM KIẾM</button>
-      </form>
-    </div>
-    <div class="hotline"><img src="hotline.gif" alt="Hotline" /></div>
-  </div>
-  <nav class="navbar">
-    <ul class="menu">
-      <li><a href="index.html">TRANG CHỦ</a></li>
-      <li><a href="gioithieu.html">VỀ CHÚNG TÔI</a></li>
-      <li><a href="#">SẢN PHẨM</a></li>
-      <li><a href="#">CHỨNG CHỈ</a></li>
-      <li><a href="#">TIN TỨC</a></li>
-      <li><a href="lienhe.html">LIÊN HỆ</a></li>
-    </ul>
-  </nav>
-</div>
-
+<header class="header-full" data-component="header" data-page="contact"></header>
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
-  <a href="index.html">Trang chủ</a> / <span class="current">Liên hệ</span>
+<a href="index.html">Trang chủ</a> / <span class="current">Liên hệ</span>
 </div>
-
 <!-- NỘI DUNG TRANG LIÊN HỆ -->
 <section class="contact-section">
-  <div class="contact-wrapper">
-    <div class="contact-left">
-      <h1>CÔNG TY TNHH MI&ECO</h1>
-      <p><strong>MST:</strong> 0123456789</p>
-      <p><strong>Văn phòng Chính:</strong> 222 Lê Sao, Phú Thạnh, Tân Phú, Hồ Chí Minh</p>
-      <p><strong>Kho Hồ Chí Minh:</strong> 2/15D Ấp Đình (Nguyễn Thị Ai mới), xã Tân Xuân, Hóc Môn, TP.HCM</p>
-      <p><strong>Nhà Máy:</strong> Lô 3 KCN Sóng Thần 1, Đường số 10, P. Dĩ An, Thị xã Dĩ An, T. Bình Dương</p>
-      <p><strong>Email:</strong> contact@mieco.vn</p>
-      <p><strong>SĐT:</strong> 0909 123 456 - (028) 7303 0079</p>
-    </div>
-
-    <div class="contact-right">
-       <div id="success-message" style="display:none; color: green; margin-top: 20px; font-weight: bold;">
+<div class="contact-wrapper">
+<div class="contact-left">
+<h1>CÔNG TY TNHH MI&amp;ECO</h1>
+<p><strong>MST:</strong> 0123456789</p>
+<p><strong>Văn phòng Chính:</strong> 222 Lê Sao, Phú Thạnh, Tân Phú, Hồ Chí Minh</p>
+<p><strong>Kho Hồ Chí Minh:</strong> 2/15D Ấp Đình (Nguyễn Thị Ai mới), xã Tân Xuân, Hóc Môn, TP.HCM</p>
+<p><strong>Nhà Máy:</strong> Lô 3 KCN Sóng Thần 1, Đường số 10, P. Dĩ An, Thị xã Dĩ An, T. Bình Dương</p>
+<p><strong>Email:</strong> contact@mieco.vn</p>
+<p><strong>SĐT:</strong> 0909 123 456 - (028) 7303 0079</p>
+</div>
+<div class="contact-right">
+<div id="success-message" style="display:none; color: green; margin-top: 20px; font-weight: bold;">
   ✔ Gửi thành công! Cảm ơn bạn đã liên hệ.
 </div>
-<form class="contact-form" autocomplete="off">
-  <div class="form-group">
-    <input type="text" placeholder="Họ tên"  />
-    <span class="input-status-icon"></span>
-    <div class="error-message"></div>
-  </div>
-  <div class="form-group">
-    <input type="text" placeholder="Địa chỉ"  />
-    <span class="input-status-icon"></span>
-    <div class="error-message"></div>
-  </div>
-  <div class="form-group">
-    <input type="email" placeholder="Email"  />
-    <span class="input-status-icon"></span>
-    <div class="error-message"></div>
-  </div>
-  <div class="form-group">
-  <input type="text" id="phone" placeholder="Số điện thoại" />
-  <span class="input-status-icon"></span>
-  <div class="error-message" id="phone-error"></div>
+<form autocomplete="off" class="contact-form" novalidate="">
+<div class="form-group">
+<input aria-label="Họ tên" name="fullName" placeholder="Họ tên" required="" type="text"/>
+<span class="input-status-icon"></span>
+<div class="error-message"></div>
 </div>
-  <div class="form-group">
-    <input type="text" placeholder="Chủ đề" />
-    <span class="input-status-icon"></span>
-    <div class="error-message"></div>
-  </div>
-  <div class="form-group">
-    <textarea rows="5" placeholder="Nội dung" ></textarea>
-    <span class="input-status-icon"></span>
-    <div class="error-message"></div>
-  </div>
-  <div class="form-buttons">
-    <button type="submit">GỬI</button>
-    <button type="reset">NHẬP LẠI</button>
-    <div class="error-message"></div>
-  </div>
+<div class="form-group">
+<input aria-label="Địa chỉ" name="address" placeholder="Địa chỉ" required="" type="text"/>
+<span class="input-status-icon"></span>
+<div class="error-message"></div>
+</div>
+<div class="form-group">
+<input aria-label="Email" name="email" placeholder="Email" required="" type="email"/>
+<span class="input-status-icon"></span>
+<div class="error-message"></div>
+</div>
+<div class="form-group">
+<input aria-label="Số điện thoại" id="phone" inputmode="numeric" name="phone" placeholder="Số điện thoại" required="" type="text"/>
+<span class="input-status-icon"></span>
+<div class="error-message" id="phone-error"></div>
+</div>
+<div class="form-group">
+<input aria-label="Chủ đề" name="subject" placeholder="Chủ đề" required="" type="text"/>
+<span class="input-status-icon"></span>
+<div class="error-message"></div>
+</div>
+<div class="form-group">
+<textarea aria-label="Nội dung" name="message" placeholder="Nội dung" required="" rows="5"></textarea>
+<span class="input-status-icon"></span>
+<div class="error-message"></div>
+</div>
+<div class="form-buttons">
+<button type="submit">GỬI</button>
+<button type="reset">NHẬP LẠI</button>
+<div class="error-message"></div>
+</div>
 </form>
-    </div>
-  </div>
+</div>
+</div>
 </section>
-
 <!-- FOOTER GIỐNG INDEX -->
-<section class="footer-section snap-section">
-  <div class="footer-wrapper">
-    <div class="footer-columns">
-      <div class="footer-left">
-        <h3>CÔNG TY TNHH MI&ECO</h3>
-        <p><strong>MST:</strong> 0123456789</p>
-        <p><strong>Văn Phòng Chính :</strong> 222 Lê Sao, Phú Thạnh, Tân Phú, Hồ Chí Minh</p>
-        <p><strong>Kho Hồ Chí Minh:</strong> 2/15D Ấp Đình (Nguyễn Thị Ai mới), xã Tân Xuân,Huyện Hóc Môn, Tp. HCM</p>
-        <p><strong>Nhà Máy:</strong> Lô 3 KCN Sóng Thần 1, Đường số 10, P. Dĩ An, Thị xã Dĩ An, T. Bình Dương</p>
-        <p><strong>Email:</strong> contact@mieco.vn</p>
-        <p><strong>Website:</strong> www.mieco.vn</p>
-      </div>
-      <div class="footer-right">
-        <h3>THÔNG TIN LIÊN HỆ</h3>
-        <p>📞 0909 123 456 - (028) 7303 0079</p>
-        <p>📧 support@mieco.vn</p>
-        <p>🌐 facebook.com/mieco.vn</p>
-        <div class="social-icons">
-          <img src="facebook.png" alt="Facebook">
-          <img src="shopee.png" alt="Shopee">
-          <img src="lazada.jpg" alt="Lazada">
-          <img src="tiktok.png" alt="TikTok">
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© Copyright MI&ECO. All rights reserved.</p>
-    </div>
-  </div>
-</section>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".contact-form");
-  const inputs = form.querySelectorAll("input, textarea");
-  const successMsg = document.getElementById("success-message");
-
-  // Ẩn thông báo khi người dùng nhập dữ liệu mới
-  inputs.forEach((input) => {
-    input.addEventListener("input", () => {
-      validateInput(input);
-      successMsg.style.display = "none";
-    });
-  });
-
-  function validateInput(input) {
-    const value = input.value.trim();
-    const icon = input.parentElement.querySelector(".input-status-icon");
-    const err = input.parentElement.querySelector(".error-message");
-    let valid = true;
-    let errorMessage = "";
-
-    if (!value) {
-      valid = false;
-      errorMessage = "Không được để trống";
-    }
-
-    if (input.type === "email" && value) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(value)) {
-        valid = false;
-        errorMessage = "Email không hợp lệ";
-      }
-    }
-
-    if (input.id === "phone" && value) {
-      if (!/^[0-9]+$/.test(value)) {
-        valid = false;
-        errorMessage = "Chỉ nhập số từ 0–9";
-      }
-    }
-
-    if (valid) {
-      input.classList.add("valid");
-      input.classList.remove("invalid");
-      icon.textContent = "✔";
-      icon.style.color = "green";
-      if (err) {
-        err.textContent = "";
-        err.style.display = "none";
-      }
-    } else {
-      input.classList.add("invalid");
-      input.classList.remove("valid");
-      icon.textContent = "❗";
-      icon.style.color = "red";
-      if (err) {
-        err.textContent = errorMessage;
-        err.style.display = "none"; // Chỉ hiện khi hover
-      }
-    }
-
-    return valid;
-  }
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    let isValid = true;
-    inputs.forEach((input) => {
-      if (!validateInput(input)) isValid = false;
-    });
-
-    if (isValid) {
-      successMsg.style.display = "block";
-    }
-  });
-
-  form.addEventListener("reset", function () {
-    setTimeout(() => {
-      inputs.forEach((input) => {
-        input.classList.remove("valid", "invalid");
-        const icon = input.parentElement.querySelector(".input-status-icon");
-        const err = input.parentElement.querySelector(".error-message");
-        if (icon) icon.textContent = "";
-        if (err) {
-          err.textContent = "";
-          err.style.display = "none";
-        }
-      });
-      successMsg.style.display = "none";
-    }, 0);
-  });
-});
-</script>
-
-
-
-
-
-
-
+<section class="footer-section snap-section" data-component="footer"></section>
+<script defer="" src="assets/js/common.js"></script>
+<script defer="" src="assets/js/contact.js"></script>
 </body>
 </html>

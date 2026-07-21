@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Mulish', Arial, sans-serif;
   background: #fff;
   color: #333;
 }
@@ -13,68 +13,6 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-/* Header */
-.header-full {
-  background: white;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-}
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-}
-.logo img {
-  height: 70px;
-}
-.search-box {
-  width: 700px;
-  margin: 0 30px 0 0;
-}
-.search-form {
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.search-form input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  font-size: 16px;
-}
-.search-form button {
-  background: #1b7841;
-  color: white;
-  padding: 0 20px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-.hotline img {
-  height: 50px;
-}
-
-/* Navbar */
-.navbar {
-  background: #145c32;
-  padding: 14px 0;
-}
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  list-style: none;
-}
-.menu li a {
-  color: white;
-  font-weight: bold;
-}
-.menu li a.active,
-.menu li a:hover {
-  color: yellow;
 }
 
 /* Breadcrumb */
@@ -112,14 +50,14 @@ a {
   text-align: center;
 }
 .intro-header h2 {
-  font-family: 'Lobster', sans-serif;
+  font-family: 'Lobster', cursive;
   font-size: 45px;
   font-weight: bold;
   color: #1b7841;
   margin-bottom: 20px;
 }
 .intro-header p {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Mulish', Arial, sans-serif;
   font-weight: 600; /* hoặc 400, 700 tuỳ ý */
   font-size: 17px;
   line-height: 1.8;
@@ -146,7 +84,7 @@ a {
   height: 100vh;
 }
 .intro-text {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Mulish', Arial, sans-serif;
   font-weight: 600;
   font-size: 17px;
   line-height: 1.8;
@@ -303,11 +241,7 @@ html::-webkit-scrollbar {
   margin-left: auto;       /* đẩy sát phải */
 }
 
-.header-full {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
+/* Header được quản lý hoàn toàn trong shared.css */
 .vision-mission-section {
   display: flex;
   justify-content: center;
@@ -349,7 +283,7 @@ html::-webkit-scrollbar {
 /* Tiêu đề nổi bật */
 .vision-box h3,
 .mission-box h3 {
-  font-family: 'Lobster', sans-serif;
+  font-family: 'Lobster', cursive;
   font-size: 50px;
   color: #1b7841;
   margin-bottom: 20px;
@@ -361,7 +295,7 @@ html::-webkit-scrollbar {
 /* Nội dung văn bản */
 .vision-box p,
 .mission-box p {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Mulish', Arial, sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.8;
@@ -414,7 +348,7 @@ html::-webkit-scrollbar {
 }
 
 .product-cycle-heading {
-  font-family: 'Lobster', sans-serif;
+  font-family: 'Lobster', cursive;
   font-size: 45px;
   text-align: center;
   color: #1b7841;
@@ -425,7 +359,7 @@ html::-webkit-scrollbar {
   font-size: 45px;
   display: block;
   margin-top: 8px;
-  font-family: 'Lobster', sans-serif;
+  font-family: 'Lobster', cursive;
   color: #1b7841;
 }
 
@@ -464,7 +398,7 @@ html::-webkit-scrollbar {
   padding-top: 70px;
   padding-right: 10px;      /* giảm thêm */
   margin-left: -10px;       /* 💡 đẩy sát hình bên trái */
-  font-family: 'Muli', sans-serif;
+  font-family: 'Mulish', Arial, sans-serif;
   font-size: 20px;
   line-height: 1.8;
   color: #333;
@@ -487,7 +421,7 @@ html::-webkit-scrollbar {
 .feature-heading {
   font-size: 45px;
   color: #1b7841;
-  font-family: 'Lobster', sans-serif;
+  font-family: 'Lobster', cursive;
   margin-bottom: 30px;
 }
 
@@ -593,98 +527,6 @@ html::-webkit-scrollbar {
   transform: translateY(-10px);
 }
 
-.footer-section {
-  background: #145c32;
-  color: #fff;
-  font-size: 15px;
-  padding: 40px 20px 20px;
-  margin-top: 60px;
-  height: auto; 
-  
-}
-.footer-section.snap-section {
-  height: 550px !important;
-}
-
-.footer-wrapper {
-  padding-top: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%; /* ✅ Quan trọng để auto margin có hiệu lực */
-}
-.footer-columns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  flex: 1; /* ✅ Chiếm toàn bộ phần còn lại */
-}
-.footer-left, .footer-right, .footer-embed {
-  flex: 1;
-  min-width: 280px;
-}
-.footer-left h3, .footer-right h3, .footer-embed h3 {
-  margin-bottom: 25px;
-  font-size: 35px;
-  font-weight: bold;
-}
-.footer-left p, .footer-right p {
-  margin-bottom: 16px;
-  line-height: 1.6;
-  font-size: 20px;
-
-}
-.social-icons {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-}
-
-.social-icons img {
-  height: 50px;
-  width: 50px;
-  object-fit: cover;        /* Giữ đúng tỷ lệ ảnh */
-  border-radius: 50%;       /* Bo tròn hoàn toàn */
-  transition: transform 0.3s ease;
-}
-
-.social-icons img:hover {
-  transform: scale(1.1);    /* Zoom nhẹ khi hover */
-}
-
-
-.footer-bottom {
-  text-align: center;
-  margin-top: auto;
-  padding-top: 12px;
-  font-size: 13px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ddd;
-}
-.footer-embed iframe {
-  width: 100%;
-  max-width: 280px;
-}
-
-.footer-left h3,
-.footer-right h3 {
-  position: relative;
-  padding-bottom: 8px;
-  margin-bottom: 20px;
-}
-
-.footer-left h3::after,
-.footer-right h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background: #fff; /* Màu trắng cho nổi bật */
-}
 .snap-container,
 .section-1-wrapper,
 .slider-outer-wrapper,
@@ -699,4 +541,38 @@ body {
   body {
     overflow-x: hidden;
   }
+}
+
+
+/* About: giữ bố cục cũ, loại bỏ chiều cao cứng gây cắt nội dung */
+.intro-image img { max-height: 760px; }
+@media (max-width: 900px) {
+  .intro-header-wrapper { height: auto; min-height: 320px; padding-bottom: 28px; }
+  .intro-header { padding: 28px 22px; }
+  .intro-header h2 { font-size: 38px; }
+  .highlight { font-size: 48px; }
+  .intro-body { height: auto; flex-direction: column; gap: 24px; }
+  .intro-image, .intro-text { height: auto; flex: none; width: 100%; }
+  .intro-text { padding: 0 24px; }
+  .extra-img { padding-right: 0; }
+  .extra-img img { width: min(100%, 600px); padding-top: 10px; margin: 0 auto; }
+  .vision-box, .mission-box { height: auto; min-height: 0; }
+  .vision-box img, .mission-box img { max-width: 100%; height: auto; margin: 20px auto 0; }
+  .product-cycle-body { flex-direction: column; }
+}
+
+/* Nội dung nằm sẵn trong màn hình đầu tiên không chạy trễ khi vừa chuyển trang. */
+.show-immediately {
+  transition: none !important;
+  transition-delay: 0s !important;
+}
+
+/* Không làm phần đầu trang trượt vào khi vừa chuyển trang; các section phía dưới vẫn có hiệu ứng cuộn. */
+.intro-header-wrapper .fade-up,
+.intro-body .slide-left,
+.intro-body .slide-right {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  transition-delay: 0s;
 }
