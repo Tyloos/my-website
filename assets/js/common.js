@@ -1,6 +1,6 @@
 (() => {
   const COMPONENT_EVENT = 'mieco:components-ready';
-  const CACHE_VERSION = 'v4';
+  const CACHE_VERSION = 'v5-clean-urls';
   const CACHE_KEYS = {
     header: `mieco:${CACHE_VERSION}:header`,
     footer: `mieco:${CACHE_VERSION}:footer`,
@@ -95,8 +95,8 @@
         event.preventDefault();
         const input = form.querySelector('input[name="q"], input[type="search"], input[type="text"]');
         const query = input ? input.value.trim() : '';
-        const onProductPage = window.location.pathname.endsWith('/sanpham.html')
-          || window.location.pathname.endsWith('sanpham.html');
+        const normalizedPath = window.location.pathname.replace(/\/+$/, '');
+        const onProductPage = normalizedPath === '/san-pham';
 
         if (onProductPage) {
           const url = new URL(window.location.href);
@@ -109,8 +109,8 @@
         }
 
         window.location.href = query
-          ? `sanpham.html?q=${encodeURIComponent(query)}`
-          : 'sanpham.html';
+          ? `/san-pham/?q=${encodeURIComponent(query)}`
+          : '/san-pham/';
       });
     });
   }
@@ -130,7 +130,10 @@
   }
 
   function bindPagePrefetch() {
-    const links = Array.from(document.querySelectorAll('.menu a[href$=".html"]'));
+    const links = Array.from(document.querySelectorAll('.menu a[href]')).filter((link) => {
+      const href = link.getAttribute('href') || '';
+      return href.startsWith('/') && href !== window.location.pathname;
+    });
     const prefetched = new Set();
 
     const prefetch = (href) => {
@@ -174,10 +177,10 @@
     const footerHosts = Array.from(document.querySelectorAll('[data-component="footer"]'));
 
     const headerRequest = headerHosts.length
-      ? fetchComponent('components/header.html')
+      ? fetchComponent('/components/header.html')
       : Promise.resolve('');
     const footerRequest = footerHosts.length
-      ? fetchComponent('components/footer.html')
+      ? fetchComponent('/components/footer.html')
       : Promise.resolve('');
 
     const [headerResult, footerResult] = await Promise.allSettled([

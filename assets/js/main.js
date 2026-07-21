@@ -66,10 +66,10 @@ function initSearch() {
       }
 
       const routes = [
-        { keywords: ["lien he", "contact", "dien thoai", "email"], url: "lienhe.html" },
-        { keywords: ["san pham", "tinh nang", "bao bi", "hop", "khay"], url: "gioithieu.html#tinh-nang" },
-        { keywords: ["vong doi", "phan huy", "chung chi", "moi truong"], url: "gioithieu.html#vong-doi" },
-        { keywords: ["gioi thieu", "ve chung toi", "tam nhin", "su menh", "mieco", "mi eco"], url: "gioithieu.html" },
+        { keywords: ["lien he", "contact", "dien thoai", "email"], url: "/lien-he/" },
+        { keywords: ["san pham", "tinh nang", "bao bi", "hop", "khay"], url: "/gioi-thieu/#tinh-nang" },
+        { keywords: ["vong doi", "phan huy", "chung chi", "moi truong"], url: "/gioi-thieu/#vong-doi" },
+        { keywords: ["gioi thieu", "ve chung toi", "tam nhin", "su menh", "mieco", "mi eco"], url: "/gioi-thieu/" },
       ];
 
       const match = routes.find((route) => route.keywords.some((keyword) => query.includes(keyword)));
